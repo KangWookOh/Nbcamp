@@ -7,8 +7,10 @@ import java.util.Scanner;
 public class App {
 
     public static void main(String[] args) {
-        ArithmeticCalculator arithmeticCalculator  = new ArithmeticCalculator();
         Scanner sc = new Scanner(System.in);
+        ArithmeticCalculator arithmeticCalculator =new ArithmeticCalculator();
+        CircleCalculator circleCalculator = new CircleCalculator();
+
         while (true){
             System.out.println("사칙연산을 진행하시겠습니까? 원의 넓이를 구하시겠습니까?(사칙연산: calc 원의 넓이 : circle)");
             String mode = sc.next();
@@ -19,10 +21,10 @@ public class App {
 
                 System.out.println("두번째 숫자를 입력하세요: ");
                 int input2 = sc.nextInt(); // 첫번째 input 받기
-                System.out.println("사칙 연산 기호를 입력 하세요 ex(+,-,*,/)");
+                System.out.println("사칙 연산 기호를 입력 하세요 ex(+,-,*,/,%)");
                 char sign = sc.next().charAt(0); // 연산자 받기
                 try {
-                    int result = arithmeticCalculator.calculate(input1, input2, sign);
+                    double result = arithmeticCalculator.calculate(input1, input2, sign);
                     System.out.println("결과: "+ result);
                 }catch (CalculationException e){
                     System.out.println(e.getMessage());
@@ -43,7 +45,6 @@ public class App {
 
             }
             else if(mode.equals("circle")){
-                CircleCalculator circleCalculator = new CircleCalculator();
                 System.out.print("원의 반지름을 입력하세요: ");
                 double radius = sc.nextDouble();
                 try {
@@ -60,13 +61,9 @@ public class App {
                 }
                 else if(answer.equals("remove")){
                     circleCalculator.circleRemove();
-
-
-
                 }
                 else if (answer.equals("inquiry")){
                     circleCalculator.inquiryCricle();
-
                 }
             }
             else{

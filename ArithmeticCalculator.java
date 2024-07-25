@@ -1,31 +1,33 @@
 package calculator;
 
-public class ArithmeticCalculator extends Calculator{
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ArithmeticCalculator extends Calculator {
+
+    private Map<Character, Operator> operators;
 
 
-    public int calculate(int input1, int input2, char sign){
-        int result =0;
-        switch (sign){
-            case '+':
-                result = input1 + input2;
-                break;
-            case '-':
-                result = input1 - input2;
-                break;
-            case '*':
-                result = input1 * input2;
-                break;
-            case '/':
-                if(input2 == 0){
-                    throw new CalculationException("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                }
-                result = input1 / input2;
-                break;
-            default:
-                throw new CalculationException("올바른 연산기호를 입력하세요");
+    public ArithmeticCalculator() {
+        super();
+        operators =new HashMap<>();
+        operators.put('+', new AddOperator());
+        operators.put('-', new SubtractOperator());
+        operators.put('*', new MultiplyOperator());
+        operators.put('/', new DivideOperator());
+    }
+    public double calculate(double input1, double input2, char sign) {
+        Operator operator = operators.get(sign);
+        if (operator == null) {
+            throw new CalculationException("올바른 연산기호를 입력 하세요");
         }
+        double result = operator.operate(input1, input2);
         res.add(result);
         return result;
+
+
+
 
     }
 }
