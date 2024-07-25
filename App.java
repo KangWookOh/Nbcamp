@@ -20,7 +20,7 @@ public class App {
             char sign = sc.next().charAt(0); // 연산자 받기
             int result = 0;
             calculator.calculate(input1, input2, sign);
-            calculator.res.add(result);
+
             System.out.println("결과: "+calculator.result);
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, remove 입력 시 가장 먼저 저장된 연산 결과 삭제, inquiry 입력 시 모든 연산 결과 조회)");
             String question = sc.next(); // 입력값을 받다 exit을 받았을 경우 실행을 멈추는 로직
@@ -28,13 +28,13 @@ public class App {
                 break;
             }
             else if(question.equals("remove")){
-                if(!calculator.res.isEmpty()){
-                    calculator.res.remove(0);
+                if(!calculator.getRes().isEmpty()){ // getter 사용하여 배열 비었는지 확인
+                    calculator.getRes().remove(0);
                     System.out.println("삭제 되었습니다.");
                 }
             }
             else if(question.equals("inquiry")){
-                for(int res: calculator.res){
+                for(int res: calculator.getRes()){ // getter 사용 하여 배열 순회
                     System.out.println(res);
                 }
             }

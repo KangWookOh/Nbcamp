@@ -1,13 +1,17 @@
 package calculator;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    List<Integer> res ;
-    public Calculator(){
-        res = new ArrayList<Integer>();
-    }
+   private List<Integer> res ;
+   public Calculator() {
+       this.res = new ArrayList<>();
+   }
+
     int result=0;
     public int calculate(int input1, int input2,char sign){
 
@@ -32,6 +36,14 @@ public class Calculator {
         }
         res.add(result);
         return result;
+    }
+    //getter 구현 메소드
+    public List<Integer> getRes() {
+        return res;
+    }
+    //setter 구현 메소드
+    public void setRes(List<Integer> res) {
+        this.res = new ArrayList<>();
     }
 
 }
