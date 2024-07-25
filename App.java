@@ -24,7 +24,8 @@ public class App {
                 System.out.println("사칙 연산 기호를 입력 하세요 ex(+,-,*,/,%)");
                 char sign = sc.next().charAt(0); // 연산자 받기
                 try {
-                    double result = arithmeticCalculator.calculate(input1, input2, sign);
+                    OperatorType operatorType = OperatorType.getOperator(sign);
+                    double result = arithmeticCalculator.calculate(input1, input2,operatorType);
                     System.out.println("결과: "+ result);
                 }catch (CalculationException e){
                     System.out.println(e.getMessage());

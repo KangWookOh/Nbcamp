@@ -12,7 +12,8 @@ public enum OperatorType {
     OperatorType(char symbol) {
         this.symbol =symbol;
     }
-    public static OperatorType getSignType(char symbol) {
+    // 연산기호로 연산 타입을 반환하는 메소드 구현
+    public static OperatorType getOperator(char symbol) {
         for (OperatorType type : OperatorType.values()) {
             if (type.symbol == symbol) {
                 return type;
