@@ -6,17 +6,19 @@ import java.util.Map;
 
 public class ArithmeticCalculator extends Calculator {
 
-    private Map<Character, Operator> operators;
+    private Map<OperatorType, Operator> operators;
 
 
     public ArithmeticCalculator() {
         super();
         operators =new HashMap<>();
-        operators.put('+', new AddOperator());
-        operators.put('-', new SubtractOperator());
-        operators.put('*', new MultiplyOperator());
-        operators.put('/', new DivideOperator());
-        operators.put('%', new ModOperator());
+        operators = new HashMap<>();
+        operators.put(OperatorType.ADD, new AddOperator());
+        operators.put(OperatorType.SUBTRACT,new SubtractOperator());
+        operators.put(OperatorType.MULTIPLY,new MultiplyOperator());
+        operators.put(OperatorType.DIVIDE,new DivideOperator());
+        operators.put(OperatorType.MOD,new ModOperator());
+
     }
     public double calculate(double input1, double input2, char sign) {
         Operator operator = operators.get(sign);
