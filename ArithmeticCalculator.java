@@ -16,6 +16,7 @@ public class ArithmeticCalculator extends Calculator {
         operators.put('-', new SubtractOperator());
         operators.put('*', new MultiplyOperator());
         operators.put('/', new DivideOperator());
+        operators.put('%', new ModOperator());
     }
     public double calculate(double input1, double input2, char sign) {
         Operator operator = operators.get(sign);
