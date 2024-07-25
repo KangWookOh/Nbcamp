@@ -31,9 +31,7 @@ public class App {
                 calculator.remove();
             }
             else if(question.equals("inquiry")){
-                for(int res: calculator.getRes()){ // getter 사용 하여 배열 순회
-                    System.out.println(res);
-                }
+               calculator.inquiry();
             }
         }
 
