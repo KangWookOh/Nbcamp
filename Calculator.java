@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Calculator {
    private List<Integer> res ;
+   
    public Calculator() {
        this.res = new ArrayList<>();
    }
@@ -39,7 +40,7 @@ public class Calculator {
     }
     //getter 구현 메소드
     public List<Integer> getRes() {
-        return res;
+        return new ArrayList<>(res);
     }
     //setter 구현 메소드
     public void setRes(List<Integer> res) {
