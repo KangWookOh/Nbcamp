@@ -27,11 +27,8 @@ public class App {
             if(question.equals("exit")) {
                 break;
             }
-            else if(question.equals("remove")){
-                if(!calculator.getRes().isEmpty()){ // getter 사용하여 배열 비었는지 확인
-                    calculator.getRes().remove(0);
-                    System.out.println("삭제 되었습니다.");
-                }
+            if(question.equals("remove")) {
+                calculator.remove();
             }
             else if(question.equals("inquiry")){
                 for(int res: calculator.getRes()){ // getter 사용 하여 배열 순회

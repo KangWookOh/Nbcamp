@@ -45,5 +45,12 @@ public class Calculator {
     public void setRes(List<Integer> res) {
         this.res = new ArrayList<>();
     }
+    public  void remove(){ // 삭제 메소드 구현 
+        if(!res.isEmpty()){
+            res.remove(0);
+            System.out.println("삭제 되었습니다.");
+        }
+    }
+
 
 }
