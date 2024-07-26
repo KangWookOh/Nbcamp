@@ -31,6 +31,7 @@ public class App {
                     System.out.println(e.getMessage());
                 }
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, remove 입력 시 가장 먼저 저장된 연산 결과 삭제, inquiry 입력 시 모든 연산 결과 조회)");
+                System.out.println("입력값보다 큰 결과를 조회하시겠습니까? (greater)");
                 String question = sc.next();
                 if(question.equals("exit")) {
                     break;
@@ -43,7 +44,11 @@ public class App {
                     arithmeticCalculator.inquiry();
                     continue;
                 }
-
+                else if(question.equals("greater")){
+                    System.out.println("기준값을 입력하세요:");
+                    double value = sc.nextDouble();
+                    arithmeticCalculator.resultGreaterThan(value);
+                }
             }
             else if(mode.equals("circle")){
                 System.out.print("원의 반지름을 입력하세요: ");
@@ -56,6 +61,7 @@ public class App {
                     System.out.println(e.getMessage());
                 }
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, remove 입력 시 가장 먼저 저장된 연산 결과 삭제, inquiry 입력 시 모든 연산 결과 조회)");
+                System.out.println("입력값보다 큰 결과를 조회하시겠습니까? (greater)");
                 String answer = sc.next();
                 if(answer.equals("exit")){
                     break;
@@ -66,10 +72,17 @@ public class App {
                 else if (answer.equals("inquiry")){
                     circleCalculator.inquiryCricle();
                 }
+                else if(answer.equals("greater")){
+                    System.out.println("기준값을 입력하세요:");
+                    double value = sc.nextDouble();
+                    circleCalculator.circleGreaterThan(value);
+
+
+                }
             }
             else{
                 System.out.println("다시 입력 해주세요! ");
-                continue;
+
             }
 
 

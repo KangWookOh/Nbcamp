@@ -1,5 +1,6 @@
 package calculator;
 
+// 나눗셈 연산을 진행하는 클래스
 public class DivideOperator implements Operator{
     public double operate(double input1, double input2) {
         if(input2 == 0){

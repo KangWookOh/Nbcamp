@@ -1,5 +1,5 @@
 package calculator;
-
+//나머지 연산을 진행 하는 클래스
 public class ModOperator implements Operator{
     @Override
     public double operate(double input1, double input2) {
