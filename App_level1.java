@@ -48,7 +48,13 @@ public class App_level1 {
                     break;
                 }
             }
-          
+            else if(answer.equals("inquiry")){
+                for(int total : res){
+                    System.out.println(total);
+                    break;
+                }
+            }
+
 
 
 
