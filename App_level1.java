@@ -13,21 +13,31 @@ public class App_level1 {
         char sign = sc.next().charAt(0);
 
         int result = 0;
-        switch (sign) {
-            case'+':
-                result = input1 + input2;
+        while (true){
+            switch (sign) {
+                case'+':
+                    result = input1 + input2;
+                    break;
+                case'-':
+                    result = input1 - input2;
+                    break;
+                case'*':
+                    result = input1 * input2;
+                    break;
+                case'/':
+                    result = input1 / input2;
+                    break;
+            }
+            System.out.println("결과: " + result);
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String answer = sc.next();
+            if(answer.equals("exit")){
                 break;
-            case'-':
-                result = input1 - input2;
-                break;
-            case'*':
-                result = input1 * input2;
-                break;
-            case'/':
-                result = input1 / input2;
-                break;
+            }
+
         }
-        System.out.println("결과: " + result);
+
+
 
 
 
