@@ -12,6 +12,23 @@ public class App_level1 {
         System.out.print("사칙연산 기호를 입력하세요: ");
         char sign = sc.next().charAt(0);
 
+        int result = 0;
+        switch (sign) {
+            case'+':
+                result = input1 + input2;
+                break;
+            case'-':
+                result = input1 - input2;
+                break;
+            case'*':
+                result = input1 * input2;
+                break;
+            case'/':
+                result = input1 / input2;
+                break;
+        }
+        System.out.println("결과: " + result);
+
 
 
 
